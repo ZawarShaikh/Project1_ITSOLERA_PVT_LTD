@@ -1,0 +1,41 @@
+🎨 Proposed Web Design Layout
+🔗 1. Landing Page (Login/Register)
+Simple login with email and password.
+Option for role selection: Recruiter or Admin.
+Clean, minimalistic design with your company branding.
+🏠 2. Dashboard (Main Screen for Recruiters)
+Navigation Bar:
+Dashboard | Upload Resume | Job Matching | Analytics | Logout
+Main Sections:
+Quick Stats: Number of resumes processed, shortlisted candidates, etc.
+Recent Uploads: List of recent resume uploads with status.
+Candidate Matching Insights: Visualized as a bar chart or list.
+📤 3. Resume Upload Page
+Drag-and-drop or manual file upload.
+Display extracted data preview (skills, education, experience) before submission.
+📋 4. Job Description Input Page
+Form to input job requirements:
+Job Title
+Required Skills (multi-select dropdown)
+Minimum Experience
+Educational Qualifications
+🔍 5. Candidate Matching Results
+Ranking Table:
+Candidate Name | Match Score | Skills Match | Experience Match | Actions (Shortlist/Reject)
+Filters for skills, experience, and match score.
+📊 6. Analytics Page (Admin Only)
+Visual reports on hiring efficiency:
+Average match score over time
+Time taken from application to hire
+Success rates per job role
+⚙️ 7. Settings and User Management (Admin Panel)
+Manage recruiter accounts
+Assign roles and permissions
+🎯 Design Style Guide
+Color Palette: Professional blues and greys, accented with greens for success indicators.
+Typography: Modern and readable fonts like Roboto or Open Sans.
+Icons: Use clean icons from libraries like Font Awesome or Material Icons.
+Buttons: Rounded corners with subtle hover effects.
+Charts & Visuals: Integrate libraries like Chart.js or D3.js for interactive analytics.
+🔗 User Flow Example
+Login → 2. Dashboard → 3. Upload Resume → 4. Parse Data (BERT) → 5. Input Job Description → 6. Candidate Matching → 7. Review & Shortlist

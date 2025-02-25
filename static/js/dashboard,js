@@ -1,0 +1,61 @@
+app.controller('DashboardController', function($scope) {
+  // Quick stats data
+  $scope.stats = {
+    totalResumes: 120,
+    shortlisted: 45,
+    pending: 15
+  };
+
+  // Recent uploads data
+  $scope.recentUploads = [
+    { name: 'John Doe', status: 'Shortlisted', date: '2025-02-20' },
+    { name: 'Jane Smith', status: 'Pending', date: '2025-02-21' },
+    { name: 'Mike Johnson', status: 'Rejected', date: '2025-02-19' }
+  ];
+
+  // Resume Upload Functionality
+  $scope.isDragOver = false;
+  $scope.extractedData = null;
+
+  $scope.onFileSelected = function(event) {
+    const file = document.getElementById('resumeFile').files[0];
+    if (file) {
+      $scope.extractData(file);
+    }
+  };
+
+  $scope.onDragOver = function(event) {
+    event.preventDefault();
+    $scope.isDragOver = true;
+  };
+
+  $scope.onDragLeave = function(event) {
+    event.preventDefault();
+    $scope.isDragOver = false;
+  };
+
+  $scope.onDrop = function(event) {
+    event.preventDefault();
+    $scope.isDragOver = false;
+    const file = event.dataTransfer.files[0];
+    if (file) {
+      $scope.extractData(file);
+    }
+  };
+
+  // Dummy extraction of resume data
+  $scope.extractData = function(file) {
+    console.log(`Processing file: ${file.name}`);
+    $scope.extractedData = {
+      skills: "Python, Machine Learning, Data Analysis",
+      education: "MSc in Computer Science",
+      experience: "3 years as Data Scientist at XYZ Corp"
+    };
+    $scope.$apply();
+  };
+
+  $scope.submitResume = function() {
+    alert("Resume submitted successfully!");
+    $scope.extractedData = null;
+  };
+});

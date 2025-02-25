@@ -1,0 +1,70 @@
+<div class="dashboard-container" ng-controller="DashboardController">
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-left">Recruiter Dashboard</div>
+    <div class="nav-right">
+      <a href="#">Dashboard</a>
+      <a href="#">Job Matching</a>
+      <a href="#">Analytics</a>
+      <a href="#">Logout</a>
+    </div>
+  </nav>
+
+
+  <!-- Quick Stats Section -->
+  <section class="quick-stats">
+    <h2>Quick Stats</h2>
+    <div class="stats-grid">
+      <div class="stat-card">Total Resumes Processed: {{ stats.totalResumes }}</div>
+      <div class="stat-card">Shortlisted Candidates: {{ stats.shortlisted }}</div>
+      <div class="stat-card">Pending Reviews: {{ stats.pending }}</div>
+    </div>
+  </section>
+
+
+  <!-- Resume Upload Section -->
+  <section class="resume-upload">
+    <h2>Upload Resume</h2>
+    <div class="upload-box" ng-class="{ 'dragover': isDragOver }"
+         ng-drop="onDrop($event)" 
+         ng-dragover="onDragOver($event)" 
+         ng-dragleave="onDragLeave($event)">
+      <p>Drag & Drop Your Resume Here</p>
+      <p>OR</p>
+      <input type="file" id="resumeFile" ng-change="onFileSelected()" ng-model="resumeFile" />
+    </div>
+
+    <!-- Extracted Data Preview -->
+    <div class="data-preview" ng-if="extractedData">
+      <h3>Extracted Resume Data</h3>
+      <p><strong>Skills:</strong> {{ extractedData.skills }}</p>
+      <p><strong>Education:</strong> {{ extractedData.education }}</p>
+      <p><strong>Experience:</strong> {{ extractedData.experience }}</p>
+      <button class="submit-button" ng-click="submitResume()">Submit Resume</button>
+    </div>
+  </section>
+
+  
+  <!-- Recent Uploads Section -->
+  <section class="recent-uploads">
+    <h2>Recent Uploads</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Candidate Name</th>
+          <th>Status</th>
+          <th>Date Uploaded</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="upload in recentUploads">
+          <td>{{ upload.name }}</td>
+          <td>{{ upload.status }}</td>
+          <td>{{ upload.date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+</div>

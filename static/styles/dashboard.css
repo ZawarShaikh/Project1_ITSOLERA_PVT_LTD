@@ -1,0 +1,166 @@
+/* General Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fa;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;  /* Prevent horizontal overflow */
+}
+
+
+/* Navbar Styling Fix */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  /* Vertically align items */
+  background-color: #007bff;
+  color: white;
+  padding: 1rem 2rem;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: white;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+
+/* Dashboard Container Fix */
+.dashboard-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* Quick Stats Section Fix */
+.quick-stats {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Using Flexbox for Better Responsiveness */
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.stat-card {
+  flex: 1 1 30%; /* Flex-grow: 1, Flex-shrink: 1, Flex-basis: 30% */
+  min-width: 250px; /* Ensures each card doesn't get too small */
+  background-color: #f4f7fa;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+
+/* Resume Upload Section */
+.resume-upload {
+  margin-top: 2rem;
+}
+
+.upload-box {
+  border: 2px dashed #007bff;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: #f4f7fa;
+  cursor: pointer;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.upload-box.dragover {
+  background-color: #d0e7ff;
+  border-color: #0056b3;
+}
+
+.data-preview {
+  background-color: #fff;
+  padding: 2rem;
+  margin-top: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin: 1rem auto;
+}
+
+.submit-button {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+}
+
+/* Recent Uploads Section */
+.recent-uploads {
+  margin-top: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar a {
+    margin: 0.5rem 0;
+  }
+
+  .upload-box {
+    width: 90%;
+  }
+
+  .data-preview {
+    width: 90%;
+  }
+}
